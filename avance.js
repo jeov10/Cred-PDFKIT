@@ -112,6 +112,31 @@ doc.text('REFERENCIAS ', {align: 'center'});
     texto = 'Banco: Santander\nNúmero de tarjeta: 1478523698745632\nFecha: 23/05/2018\nTipo: Crédito\nPago mensual: 200\n ';
     table('CRÉDITO', texto, 2);
 //END PAGE
+//NEW PAGE
+    doc.addPage()
+//HEADER
+doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
+   .text(companyInfo,{align: 'right'})
+   .moveDown(0.5)
+   .rect(0, doc.y, 612, 2)
+   .fill("#000")
+   .stroke()
+   .restore()
+   .moveDown(2)
+   .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
+   .moveDown(1)
+//END HEADER
+doc.text('REFERENCIAS (PRESTAMISTA) ', {align: 'center'});
+
+    texto = 'Nombre: Chanita Flores\nCalle y número: Jacarandas #615\nColonia: El cerrito\nEmail 1: chanita@hotmail.com\nCódigo Postal: 48215\nEstado: HIDALGO\nTeléfono particular: 017894563215\nCiudad: Pachuca de Soto';
+    table('FAMILIAR', texto, 2);
+
+    texto = 'Nombre: Chanita Flores\nCalle y número: Jacarandas #615\nColonia: El cerrito\nEmail 1: chanita@hotmail.com\nCódigo Postal: 48215\nEstado: HIDALGO\nTeléfono particular: 017894563215\nCiudad: Pachuca de Soto';
+    table('NO FAMILIAR', texto, 2);
+
+    texto = 'Banco: bancomer\nNúmero de tarjeta: 1236547896541236\nTipo: débito\n ';
+    table('DÉBITO', texto, 2);
+//END PAGE
 // end and display the document in the iframe to the right
 doc.end();
 stream.on('finish', function() {
