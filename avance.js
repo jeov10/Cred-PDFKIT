@@ -1,7 +1,7 @@
 // create a document and pipe to a blob
 var doc = new PDFDocument();
 var stream = doc.pipe(blobStream());
-    
+
 
 //HEADER
 doc.fontSize(11)
@@ -15,7 +15,7 @@ doc.fontSize(11)
    .fill("#000")
    .stroke()
    .restore();
-//INFO GRAL 
+//INFO GRAL
 doc.fontSize(11)
    .text('Email: villa@alchimia.mx',72,100, {align: 'left'})
    .text('Nivel: Prestamista',72,110, {align: 'left'})
@@ -29,39 +29,39 @@ const config = {
     indent: 15,
 }
 //
-//TABLE FUNCTION      
+//TABLE FUNCTION
 function table(title, texto, col) {
     let titleWidth = doc.widthOfString(title);//tamaño del titulo
     let contentHeight = doc.heightOfString(texto); //alto del texto
-    
+
     if(col >= 2) {
-        contentHeight = contentHeight/2.9    
+        contentHeight = contentHeight/2
     }
-    
-doc.moveDown()    
+
+doc.moveDown()
    .rect(config.marginLeft + titleWidth + 7, doc.y + 7, 612-72-72-titleWidth-10, 1)
    .stroke()
    .text(title)
    .fill('#000')
    .moveDown(0.5);
-doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, contentHeight + 5) 
+doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, contentHeight + 10)
    .fill('#efefef')
    .stroke()
    .moveDown(0.5)
    .fill('#000')
    .text(texto, config.marginLeft, doc.y, {indent: config.indent, columns: col, columnGap: 15, align: 'justify', height: contentHeight})
-   .moveDown(0.5);
-doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, 1) 
+   .moveDown(1);
+doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, 1)
    .stroke();
 }
 //END FUNCTION
+doc.moveDown(3)
+    texto = 'Monto solicitado: $5000 Pesos\nPlazo requerido: 24 meses\nObjetivo del crédito solicitado: Comprar un coche\nPlazo para ser fondeado: 6 meses';
+    table('INFORMACIÓN DEL CRÉDITO SOLICITADO', texto);
 
-let texto = 'Monto solicitado: 500\nPlazo requerido: 24 meses\nObjetivo del crédito solicitado: Comprar un coche\nPlazo para ser fondeado: 6 meses';
-    table('DATOS DEL CLIENTE', texto);
+    texto = 'Nombre: María Juana Inéz\nApellido Paterno: Zambrano\nApellido Materno: García\nFecha de nacimiento: 29/10/1994\nRFC: QUBJ941029HSP\nNacionalidad: Mexicana\nEstado Civil: Soltero\nCURP: QUBJ941029HSPJLV05';
+    table('PERSONAL', texto, 2);
 
-    texto = 'Nombre: María Juana Inéz\nApellido Paterno: Zambrano\nApellido Materno: García\nFecha de nacimiento: 29/10/1994\nRFC: QUBJ941029HSP\nNacionalidad: Mexicana';
-    table('PERSONAL', texto);
-      
     texto = 'Teléfono particular: 017894561236\nTeléfono celular: 7894561230\nCorreo electrónico 1: juanito@hotmail.com\nCorreo electrónico 2: perez@hotmail.com\nCalle y número: San José 1050\nColonia: PRI Chacón\nCiudad: Saltillo\nCódigo postal: 42088\nEstado: Sonora';
     table('CONTACTO', texto, 2);
 
@@ -70,4 +70,3 @@ doc.end();
 stream.on('finish', function() {
   iframe.src = stream.toBlobURL('application/pdf');
 });
-
