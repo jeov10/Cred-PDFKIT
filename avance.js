@@ -134,7 +134,32 @@ doc.text('REFERENCIAS (PRESTAMISTA) ', {align: 'center'});
     texto = 'Nombre: Chanita Flores\nCalle y número: Jacarandas #615\nColonia: El cerrito\nEmail 1: chanita@hotmail.com\nCódigo Postal: 48215\nEstado: HIDALGO\nTeléfono particular: 017894563215\nCiudad: Pachuca de Soto';
     table('NO FAMILIAR', texto, 2);
 
-    texto = 'Banco: bancomer\nNúmero de tarjeta: 1236547896541236\nTipo: débito\n ';
+    texto = 'Banco: bancomer\nNúmero de cuenta: 1236547896541236\nTipo: débito\n ';
+    table('DÉBITO', texto, 2);
+//END PAGE
+//NEW PAGE
+    doc.addPage()
+//HEADER
+doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
+   .text(companyInfo,{align: 'right'})
+   .moveDown(0.5)
+   .rect(0, doc.y, 612, 2)
+   .fill("#000")
+   .stroke()
+   .restore()
+   .moveDown(2)
+   .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
+   .moveDown(1)
+//END HEADER
+doc.text('FUENTE DE INGRESO ', {align: 'center'});
+
+    texto = 'Nombre: Juanelo\nActividad: Lorem\nTipo de contrato: Sueldo\nNombre del jefe: El maistro\nIngreso mensual: $12,000 pesos\nTeléfono particular: 7894562135\nTiempo trabajando: 1 Año 2 Meses\nPosición: Diseño\nOtro ingreso: 2300 pesos\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
+    table('EMPLEADO', texto, 2);
+
+    texto = 'Nombre: MILKYMICH\nActividad: Lorem\nRFC: QWERTY85\nTeléfono : 7894562135\nPágina web: www.algo.com.mx\nTiempo trabajando: 3 Año 7 Meses\nPosición: Diseño\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
+    table('NEGOCIO PROPIO', texto, 2);
+
+    texto = 'Banco: bancomer\nNúmero de cuenta: 1236547896541236\nTipo: débito\n ';
     table('DÉBITO', texto, 2);
 //END PAGE
 // end and display the document in the iframe to the right
