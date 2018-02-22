@@ -42,15 +42,13 @@ doc.moveDown()
    .text(title, config.marginLeft)
    .fill('#000')
    .moveDown(0.5);
-doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, contentHeight + 10)
+doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, contentHeight + 30)
    .fill('#efefef')
    .stroke()
    .moveDown(0.5)
    .fill('#000')
-   .text(texto, config.marginLeft, doc.y, {indent: config.indent, columns: col, columnGap: 15, align: 'justify', height: contentHeight, lineGap: 5})
+   .text(texto, config.marginLeft, doc.y, {indent: config.indent, columns: col, columnGap: 15, align: 'justify', height: contentHeight+25, lineGap: 5})
    .moveDown(1);
-//doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, 1)
-   //.stroke();
 }
 //END FUNCTION
 let texto = 'Monto solicitado: $5000 Pesos\nPlazo requerido: 24 meses\nObjetivo del crédito solicitado: Comprar un coche\nPlazo para ser fondeado: 30 días';
@@ -67,8 +65,8 @@ doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
    .restore()
    .moveDown(2);
 //END HEADER
-    texto = '¿Cuál es el objeto de invertir en esta plataforma?: Incrementar mi inversión\n¿Cuál es el monto máximo que espera invertir? $50,000 pesos\n¿Es propietario de los recursos que invertirá?: NO\nEn caso de no ser el propietario real de los recursos indique de quien provienen los recursos y cuál es la relación con el propietario de dichos recursos: De los narcos';
-    table('PERFIL DE INVERSIÓN', texto, 1);
+    texto = '¿Cuál es el objeto de invertir en esta plataforma?\nIncrementar mi inversión\n¿Cuál es el monto máximo que espera invertir?\n$50,000 pesos\n¿Es propietario de los recursos que invertirá?\nNO\nProcedencia de recursos y relación\nNegocios\n ';
+    table('PERFIL DE INVERSIÓN', texto);
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -85,18 +83,18 @@ doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
 doc.fontSize(config.titleSize)
 doc.text('INFORMACIÓN PERSONAL', {align: 'center'})
 doc.fontSize(config.textSize)
-   .moveDown();
+   .moveDown(1);
     texto = 'Nombre: María Juana Inéz\nApellido Paterno: Zambrano\nApellido Materno: García\nFecha de nacimiento: 29/10/1994\nSexo: Femenino\nRFC: QUBJ941029HSP\nNacionalidad: Mexicana\nEstado Civil: Soltero\nCURP: QUBJ941029HSPJLV05\n ';
     table('PERSONAL', texto, 2);
 
     texto = 'Teléfono particular: 017894561230\nTeléfono celular: 0447712345698\nCorreo electrónico: juanito@hotmail.com\nCorreo electrónico 2: email@hotmail.com\nCalle y número: San José #105\nColonia: PRI Chacón\nCiudad: Pachuca de Soto\nCódigo postal: 42280\nEstado: HIDALGO\n ';
     table('CONTACTO', texto, 2);
 
-    texto = 'Actividad: Engañosa\nEscolaridad: Primaria\nSituación de vivienda: propia\nTiempo de residir: 10 años';
+    texto = 'Actividad: Engañosa\nEscolaridad: Primaria\nSituación de vivienda: propia\nTiempo de residir: 10 años\n ';
     table('DEMOGRÁFICO', texto, 2);
 
     texto = 'Conyuge: Juanito Pérez\nNúmero de dependientes: 21, 10, 12';
-    table('OTROS', texto, 2);
+    table('OTROS', texto);
 //END PAGE
 //NEW PAGE
     doc.addPage()
