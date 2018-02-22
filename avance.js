@@ -71,7 +71,8 @@ doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
    .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
    .moveDown(1)
 //END HEADER
-doc.text('INFORMACIÓN PERSONAL', {align: 'center'});
+doc.text('INFORMACIÓN PERSONAL', {align: 'center'})
+   .moveDown();
     texto = 'Nombre: María Juana Inéz\nApellido Paterno: Zambrano\nApellido Materno: García\nFecha de nacimiento: 29/10/1994\nSexo: Femenino\nRFC: QUBJ941029HSP\nNacionalidad: Mexicana\nEstado Civil: Soltero\nCURP: QUBJ941029HSPJLV05\n ';
     table('PERSONAL', texto, 2);
 
@@ -82,7 +83,7 @@ doc.text('INFORMACIÓN PERSONAL', {align: 'center'});
     table('DEMOGRÁFICO', texto, 2);
 
     texto = 'Conyuge: Juanito Pérez\nNúmero de dependientes: 21, 10, 12';
-    table('DEMOGRÁFICO', texto, 2);
+    table('OTROS', texto, 2);
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -151,16 +152,58 @@ doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
    .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
    .moveDown(1)
 //END HEADER
-doc.text('FUENTE DE INGRESO ', {align: 'center'});
+doc.text('TRABAJO Y FUENTE DE INGRESO', {align: 'center'});
 
     texto = 'Nombre: Juanelo\nActividad: Lorem\nTipo de contrato: Sueldo\nNombre del jefe: El maistro\nIngreso mensual: $12,000 pesos\nTeléfono particular: 7894562135\nTiempo trabajando: 1 Año 2 Meses\nPosición: Diseño\nOtro ingreso: 2300 pesos\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
     table('EMPLEADO', texto, 2);
 
-    texto = 'Nombre: MILKYMICH\nActividad: Lorem\nRFC: QWERTY85\nTeléfono : 7894562135\nPágina web: www.algo.com.mx\nTiempo trabajando: 3 Año 7 Meses\nPosición: Diseño\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
+    texto = 'Nombre: MILKYMICH\nRFC: QWERTY85\nActividad: Lorem\nTeléfono : 7894562135\nPágina web: www.algo.com.mx\nTiempo trabajando: 3 Año 7 Meses\nPosición: Diseño\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
     table('NEGOCIO PROPIO', texto, 2);
+doc.moveDown(1)
+   .text('INFORMACIÓN FINANCIERA', {align: 'center'});
+    texto = 'Ingreso mensual: $10,000\nVales de despensa: 1\nBonos: 1\nDiversión o entretenimiento: 1\nDeducciones: 1\nPagos de renta o hipoteca: 1\nPagos de seguros: 1\nGastos básicos de vivienda: 1\nPago de auto: 4\nPagos de colegiatura: 1 \nGastos de gasolina o transporte: 1\nPagos de créditos: 1\nOtros gastos: 1\nComida y despensa: 1';
+    table('EMPLEADO', texto, 2);
+    texto = 'Ingreso mensual: $10,000\nCostos fijos: $5000\nCostos variables: $2000\nUtilidad antes de impuestos: $15,000\nPagos de renta o hipoteca: 1\nGastos básicos: $4000\nPago de auto: 4\nGastos de gasolina o transporte: 1\nPagosde créditos: 1\nPago de tarjeta de crédito: $100\nComida y despensa: 1\nDiversión o entretenimiento: 1\nPagos de seguros: 1\nGastos básicos de vivienda: 1\nPagos de colegiatura: 1\nOtros gastos: 1';
+    table('NEGOCIO PROPIO', texto, 2);
+//END PAGE
+//NEW PAGE
+    doc.addPage()
+//HEADER
+doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
+   .text(companyInfo,{align: 'right'})
+   .moveDown(0.5)
+   .rect(0, doc.y, 612, 2)
+   .fill("#000")
+   .stroke()
+   .restore()
+   .moveDown(2)
+   .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
+   .moveDown(1)
+//END HEADER
+doc.text('TRABAJO Y FUENTE DE INGRESO (PRESTAMISTA)', {align: 'center'});
 
-    texto = 'Banco: bancomer\nNúmero de cuenta: 1236547896541236\nTipo: débito\n ';
-    table('DÉBITO', texto, 2);
+    texto = 'Nombre: Juanelo\nActividad: Lorem\nTipo de contrato: Sueldo\nIngreso mensual: $12,000 pesos\nTiempo trabajando: 1 Año 2 Meses\nPosición: Diseño\nOtro ingreso: 2300 pesos\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere';
+    table('EMPLEADO', texto, 2);
+
+    texto = 'Nombre: MILKYMICH\nRFC: QWERTY85\nActividad: Lorem\nTeléfono : 7894562135\nPágina web: www.algo.com.mx\nTiempo trabajando: 3 Año 7 Meses\nPosición: Diseño\nNúmero de empleados: 10\nIngreso Anual: $250000\nOtros Ingresos: N/A\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere\n ';
+    table('NEGOCIO PROPIO', texto, 2);
+//END PAGE
+//NEW PAGE
+    doc.addPage()
+//HEADER
+doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
+   .text(companyInfo,{align: 'right'})
+   .moveDown(0.5)
+   .rect(0, doc.y, 612, 2)
+   .fill("#000")
+   .stroke()
+   .restore()
+   .moveDown(2)
+   .text(userInfo,config.marginLeft,doc.y, {columns: 2, columnGap: 15, align: 'justify', height: doc.heightOfString(userInfo)/2})
+   .moveDown(1)
+//END HEADER
+    texto = '¿Cuál es el objeto de invertir en esta plataforma?: Incrementar mi inversión\n¿Cuál es el monto máximo que espera invertir? $50,000 pesos\n¿Es propietario de los recursos que invertirá?: NO\nEn caso de no ser el propietario real de los recursos indique de quien provienen los recursos y cuál es la relación con el propietario de dichos recursos: De los narcos';
+    table('PERFIL DE INVERSIÓN', texto, 1);
 //END PAGE
 // end and display the document in the iframe to the right
 doc.end();
