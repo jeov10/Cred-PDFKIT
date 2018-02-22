@@ -53,6 +53,7 @@ doc.rect(config.marginLeft, doc.y, 612-config.marginLeft-config.marginRight, con
 //END FUNCTION
 let texto = 'Monto solicitado: $5000 Pesos\nPlazo requerido: 24 meses\nObjetivo del crédito solicitado: Comprar un coche\nPlazo para ser fondeado: 30 días';
     table('INFORMACIÓN DEL CRÉDITO SOLICITADO', texto);
+doc.text('1/7', config.marginLeft, 707, {align: 'center'});
 //NEW PAGE
     doc.addPage()
 //HEADER
@@ -67,6 +68,7 @@ doc.text(companyName ,0,20,{align: 'right', characterSpacing: 4, })
 //END HEADER
     texto = '¿Cuál es el objeto de invertir en esta plataforma?\nIncrementar mi inversión\n¿Cuál es el monto máximo que espera invertir?\n$50,000 pesos\n¿Es propietario de los recursos que invertirá?\nNO\nProcedencia de recursos y relación\nNegocios\n ';
     table('PERFIL DE INVERSIÓN', texto);
+doc.text('2/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -95,6 +97,7 @@ doc.fontSize(config.textSize)
 
     texto = 'Conyuge: Juanito Pérez\nNúmero de dependientes: 21, 10, 12';
     table('OTROS', texto);
+doc.text('3/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -123,6 +126,7 @@ doc.fontSize(config.textSize)
 
     texto = 'Banco: Santander\nNúmero de tarjeta: 1478523698745632\nFecha: 23/05/2018\nTipo: Crédito\nPago mensual: 200\n ';
     table('CRÉDITO', texto, 2);
+doc.text('4/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -147,6 +151,7 @@ doc.fontSize(config.textSize)
 
     texto = 'Banco: bancomer\nNúmero de cuenta: 1236547896541236\nTipo: débito\n ';
     table('DÉBITO', texto, 2);
+doc.text('5/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -177,6 +182,7 @@ doc.fontSize(config.textSize)
     table('EMPLEADO', texto, 2);
     texto = 'Ingreso mensual: $10,000\nCostos fijos: $5000\nCostos variables: $2000\nUtilidad antes de impuestos: $15,000\nPagos de renta o hipoteca: 1\nGastos básicos: $4000\nPago de auto: 4\nGastos de gasolina o transporte: 1\nPagosde créditos: 1\nPago de tarjeta de crédito: $100\nComida y despensa: 1\nDiversión o entretenimiento: 1\nPagos de seguros: 1\nGastos básicos de vivienda: 1\nPagos de colegiatura: 1\nOtros gastos: 1';
     table('NEGOCIO PROPIO', texto, 2);
+doc.text('6/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 //NEW PAGE
     doc.addPage()
@@ -199,6 +205,7 @@ doc.fontSize(config.textSize)
 
     texto = 'Nombre: MILKYMICH\nRFC: QWERTY85\nActividad: Lorem\nTeléfono : 7894562135\nPágina web: www.algo.com.mx\nTiempo trabajando: 3 Año 7 Meses\nPosición: Diseño\nNúmero de empleados: 10\nIngreso Anual: $250000\nOtros Ingresos: N/A\nCalle y número: Santa Matilde #203\nColonia: Carboneras\nEstado: CHIHUACHUA\nCódigo postal: 48576\nCiudad: Somewhere\n ';
     table('NEGOCIO PROPIO', texto, 2);
+doc.text('7/7', config.marginLeft, 707, {align: 'center'});
 //END PAGE
 // end and display the document in the iframe to the right
 doc.end();
